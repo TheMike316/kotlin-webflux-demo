@@ -6,8 +6,10 @@ import org.springframework.data.mongodb.core.MongoOperations
 import org.springframework.data.mongodb.core.query.Criteria
 import org.springframework.data.mongodb.core.query.Query
 import org.springframework.data.mongodb.core.query.Update
+import org.springframework.stereotype.Repository
 import javax.annotation.PostConstruct
 
+@Repository
 class SequenceRepositoryImpl(val mongoOperations: MongoOperations) : SequenceRepository {
 
     override fun getNextSequenceId(key: String): Int {
